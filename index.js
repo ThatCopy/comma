@@ -28,19 +28,26 @@ function makeDate(author){
 
 client.on('message', message => {
     if (message.content.startsWith(`${prefix}ping`)) {
+        message.react('✅');
         message.channel.send('pong');
     }else if (message.content.startsWith(`${prefix}user`)) {
+        message.react('✅');
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#16a085')
             .setTitle('User info')
             .setThumbnail(message.author.displayAvatarURL())
             .addFields(
-                {name: "Username : ", value: message.author.username},
-                { name: 'Your ID : ', value: message.author.id },
-                { name: 'Account created on : ', value: makeDate(message.author), inline: true },
-                { name: 'Inline field title', value: message.author.createdTimestamp, inline: true },
+                {name: "Username ", value: message.author.username},
+                { name: 'Your ID ', value: message.author.id },
+                { name: 'Account created on ', value: makeDate(message.author), inline: true },
+                { name: 'Inline field title', value: "yes", inline: true },
             )
         message.channel.send(exampleEmbed);
+        console.log(client.users.cache.size);
+        console.log(client.guilds.cache.size)
+        //console.log(client.users);
+        //console.log(`serving ${client.users.size} users on ${client.guilds.size} servers.`)
+        //console.log(client.ws)
     }
 });
 
