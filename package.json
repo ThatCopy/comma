@@ -1,0 +1,27 @@
+{
+  "name": "comma",
+  "version": "0.1.0",
+  "description": "a fun discord bot,",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThatCopy/comma.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "comma"
+  ],
+  "author": "Copy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThatCopy/comma/issues"
+  },
+  "homepage": "https://github.com/ThatCopy/comma#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
