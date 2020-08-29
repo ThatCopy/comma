@@ -14,7 +14,7 @@ for (const file of commandFiles) {
 	// set a new item in the Collection
 	// with the key as the command name and the value as the exported module
 	client.commands.set(command.name, command);
-}
+}   
 
 
 client.once('ready', () => {
@@ -23,10 +23,19 @@ client.once('ready', () => {
 
 
 client.on('message', message => {
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
     if (message.content.startsWith(`${prefix}ping`)) {
         client.commands.get('ping').execute(message);
     }else if (message.content.startsWith(`${prefix}user`)) {
         client.commands.get('user').execute(message);
+    }else if(message.content.startsWith(`${prefix}del`)){
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+            message.channel.send("You do not have permissions to do that.")
+        }
+        else{
+           client.commands.get('del').execute(message, args);
+        }
     }
 });
 

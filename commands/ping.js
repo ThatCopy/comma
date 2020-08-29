@@ -6,7 +6,7 @@ module.exports = {
     message.channel.send("Pinging...").then(m =>{
         var ping = m.createdTimestamp - message.createdTimestamp;
         var embed = new Discord.MessageEmbed()
-        .setAuthor(`Your ping to comma is ${ping}`)
+        .setAuthor(`Your ping to comma is ${ping}.`)
         .setColor("#000000")
         m.edit(embed)
     });
