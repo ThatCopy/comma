@@ -10,32 +10,24 @@ client.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
-
-	// set a new item in the Collection
-	// with the key as the command name and the value as the exported module
 	client.commands.set(command.name, command);
 }   
 
-
 client.once('ready', () => {
-	console.log('Ready!');
+    console.log('Ready!');
+    client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`);
 });
 
 
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
-    if (message.content.startsWith(`${prefix}ping`)) {
-        client.commands.get('ping').execute(message);
-    }else if (message.content.startsWith(`${prefix}user`)) {
-        client.commands.get('user').execute(message);
-    }else if(message.content.startsWith(`${prefix}del`)){
-        if (!message.member.hasPermission('MANAGE_MESSAGES')) {
-            message.channel.send("You do not have permissions to do that.")
-        }
-        else{
-           client.commands.get('del').execute(message, args);
-        }
+    if (!client.commands.has(command)) return;
+    try {
+        client.commands.get(command).execute(message, args);
+    } catch (error) {
+        console.error(error);
+        message.reply('there was an error trying to execute that command!');
     }
 });
 
