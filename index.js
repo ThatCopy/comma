@@ -1,53 +1,32 @@
 const Discord = require('discord.js');
 const dotenv = require('dotenv');
 const { prefix } = require('./config.json');
-
-function timeConverter(UNIX_timestamp){
-    var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    return time;
-  }
+const fs = require('fs');
 
 dotenv.config();
 const client = new Discord.Client();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+client.commands = new Discord.Collection();
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
+}
+
 
 client.once('ready', () => {
 	console.log('Ready!');
 });
 
-function makeDate(author){
-    return`${author.createdAt.getDate()}.${author.createdAt.getMonth()}.${author.createdAt.getFullYear()}` //nice code
-}
 
 client.on('message', message => {
     if (message.content.startsWith(`${prefix}ping`)) {
-        message.react('✅');
-        message.channel.send('pong');
+        client.commands.get('ping').execute(message);
     }else if (message.content.startsWith(`${prefix}user`)) {
-        message.react('✅');
-        const exampleEmbed = new Discord.MessageEmbed()
-            .setColor('#16a085')
-            .setTitle('User info')
-            .setThumbnail(message.author.displayAvatarURL())
-            .addFields(
-                {name: "Username ", value: message.author.username},
-                { name: 'Your ID ', value: message.author.id },
-                { name: 'Account created on ', value: makeDate(message.author), inline: true },
-                { name: 'Inline field title', value: "yes", inline: true },
-            )
-        message.channel.send(exampleEmbed);
-        console.log(client.users.cache.size);
-        console.log(client.guilds.cache.size)
-        //console.log(client.users);
-        //console.log(`serving ${client.users.size} users on ${client.guilds.size} servers.`)
-        //console.log(client.ws)
+        client.commands.get('user').execute(message);
     }
 });
 
