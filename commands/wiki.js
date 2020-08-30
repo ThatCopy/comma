@@ -10,21 +10,20 @@ let w;
 module.exports = {
 	name: 'wiki',
 	description: 'search on wikipedia',
-	execute(message, args, client) {
+	async execute(message, args, client) {
         try {
-            message.channel.send("Loading ...").then(async m => {
             w = await wiki().page(args[0].replace("-", " "))
+            message.channel.send("Loading ...").then(async m => {
             const embed = new Discord.MessageEmbed()
                 .setColor('#ff00ff')
                 .setTitle(capitalize(args[0].replace("-", " ")))
-                .setDescription(`${await w.summary()} **Learn more by clicking the title.**`) //nightmare
+                .setDescription(`${await w.summary()} **Learn more by clicking at the title.**`) //nightmare
                 .setImage(await w.mainImage())
-                .setURL(w.url())
+                .setURL(await w.url())
             m.edit(embed)
             message.react('✅');})
         } catch (error) {
-            message.react('❌');    
+            message.react('❌'); 
             message.channel.send("There was a error calling the API." + error)
         }
-
     }}
