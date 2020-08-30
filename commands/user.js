@@ -4,7 +4,7 @@ module.exports = {
 	description: 'get user info',
 	execute(message, args, client) {
         message.react('✅');
-        const exampleEmbed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor('#16a085')
             .setTitle('User info')
             .setThumbnail(message.author.displayAvatarURL())
@@ -13,6 +13,6 @@ module.exports = {
                 { name: 'Your ID ', value: message.author.id },
                 { name: 'Account created on ', value: `${message.author.createdAt.getDate()}.${message.author.createdAt.getMonth()}.${message.author.createdAt.getFullYear()}`, inline: true },
             )
-        message.channel.send(exampleEmbed);
+        message.channel.send(embed);
 	},
 };
