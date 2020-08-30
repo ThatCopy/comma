@@ -24,6 +24,6 @@ module.exports = {
             message.react('✅');})
         } catch (error) {
             message.react('❌'); 
-            message.channel.send("There was a error calling the API." + error)
+            message.channel.send("There was a error calling the API. " + error)
         }
     }}
