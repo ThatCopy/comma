@@ -6,7 +6,7 @@ let re = /\b(pun|programming|miscellaneous|dark)\b/i
 module.exports = {
 	name: 'joke',
 	description: 'tells you a joke',
-	async execute(message, args) {
+	async execute(message, args, client) {
         if(args.length){
             if(re.test(args[0])){
                 request.get("https://sv443.net/jokeapi/v2/joke/" + args[0], (error, response, body) => {

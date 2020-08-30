@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'ping',
 	description: 'Ping!',
-	execute(message) {
+	execute(message, args, client) {
     message.channel.send("Pinging...").then(m =>{
         var ping = m.createdTimestamp - message.createdTimestamp;
         var embed = new Discord.MessageEmbed()

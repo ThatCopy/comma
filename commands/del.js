@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'del',
 	description: 'deletes messages if you have permissions',
-	execute(message, args) {
+	execute(message, args, client) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) {
             message.channel.send("You do not have permissions to do that.")
         }

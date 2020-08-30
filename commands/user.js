@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'user',
 	description: 'get user info',
-	execute(message) {
+	execute(message, args, client) {
         message.react('✅');
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#16a085')
