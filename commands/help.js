@@ -17,7 +17,7 @@ module.exports = {
                 {name: "\n🔷 Other commands \n\n,ping", value:"Replies with ping to comma."},
                 {name: ",uptime", value: "Shows the uptime of comma"},
                 {name: ",user", value: "Gets info about you."},
-                {name: ",wiki ?[term]", value: "Replies with the wikipedia article of a term.\nIf you need to specify a term, use a \"-\" as a space. e.g: ,wiki apple-(fruit)"},
+                {name: ",wiki [term]", value: "Replies with the wikipedia article of a term.\nIf you need to specify a term, use a \"-\" as a space. e.g: ,wiki apple-(fruit)"},
                 {name: "\n🤖 Mod commands\n\n,del [number of messages]", value: "Deletes messages. Max 99."}
             )
             message.channel.send(embed);
