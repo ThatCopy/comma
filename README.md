@@ -22,7 +22,7 @@ a relatively fun discord bot.
 
 `,wiki [term]` - Replies with the Wikipedia article of a term.
 
-`,del` - Deletes messages. 
+`,del` - Deletes messages if you have permissions.
 
 
 If you want to suggest a command, make an issue.
