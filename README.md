@@ -5,17 +5,27 @@ a relatively fun discord bot.
 
 ## commands
 `,help` - Replies with a list of all commands
+
 `,coinflip` - Flips a coin.
+
 `,dice` - Rolls a dice (D6)
-`,joke` - Tells you a joke. (Powred by [JokeAPI](jokeapi.dev))
+
+`,joke` - Tells you a joke. (Powered by [JokeAPI](jokeapi.dev))
+
 `,meme` - Replies with a meme
+
 `,ping` - Replies with ping to comma.
+
 `,uptime` - Shows the uptime of comma.
+
 `,user` - Gets info about you.
-`,wiki` - Replies with the wikipedia article of a term.
+
+`,wiki [term]` - Replies with the Wikipedia article of a term.
+
 `,del` - Deletes messages. 
 
-If you want to suggest a command, make a issue.
+
+If you want to suggest a command, make an issue.
 
 ## Install
 To install comma run
