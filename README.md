@@ -10,7 +10,7 @@ a relatively fun discord bot.
 
 `,dice` - Rolls a dice (D6)
 
-`,joke` - Tells you a joke. (Powered by [JokeAPI](jokeapi.dev))
+`,joke` - Tells you a joke. (Powered by [JokeAPI](https://jokeapi.dev))
 
 `,meme` - Replies with a meme
 
