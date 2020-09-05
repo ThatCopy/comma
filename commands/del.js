@@ -14,7 +14,6 @@ module.exports = {
         }
         else{
             message.react('✅')
-            console.log(typeof(parseInt(args[0])))
             setTimeout(function(){ message.channel.bulkDelete((parseInt(args[0]) + 1))}, 1000);
         }
 }};

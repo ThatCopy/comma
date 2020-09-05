@@ -4,8 +4,6 @@ module.exports = {
 	description: 'get server info',
 	execute(message, args, client) {
         message.react('✅');
-        console.log(message.guild.iconURL());
-        console.log(message.guild.memberCount);
         const embed = new Discord.MessageEmbed()
             .setColor('#20a085')
             .setTitle('Server info')
