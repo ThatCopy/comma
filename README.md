@@ -20,7 +20,7 @@ a relatively fun discord bot.
 
 `,user` - Gets info about you.
 
-`,wiki [term]` - Replies with the Wikipedia article of a term.
+`,define [term]` - Replies with a definition of a term. Uses urban dictionary
 
 `,del` - Deletes messages if you have permissions.
 
