@@ -17,7 +17,7 @@ module.exports = {
                     let embed = new Discord.MessageEmbed()
                         .setTitle(args[0])
                         .setURL(json.list[0].permalink)
-                        .setDescription(json.list[0].definition.replace(/[\[\]']+/g, ''));
+                        .setDescription(json.list[0].definition.replace(/[\[\]']+/g, ''))
                         .setColor("#179948")
                         .setFooter("Powered by Urban Dictionary")
                     message.channel.send(embed);
