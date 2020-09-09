@@ -4,7 +4,7 @@ module.exports = {
 	description: 'help',
 	execute(message, args, client) {
         message.react('✅');
-        const embed = new Discord.MessageEmbed()
+        let embed = new Discord.MessageEmbed()
             .setColor("#0000ff")
             .setTitle("Help")
             .setDescription("*? means a flag is optional.*\n\n**Commands:**")
@@ -17,7 +17,7 @@ module.exports = {
                 {name: "\n🔷 Other commands \n\n,ping", value:"Replies with ping to comma."},
                 {name: ",uptime", value: "Shows the uptime of comma"},
                 {name: ",user", value: "Gets info about you."},
-                {name: ",wiki [term]", value: "Replies with the wikipedia article of a term.\nIf you need to specify a term, use a \"-\" as a space. e.g: ,wiki apple-(fruit)"},
+                {name: ",define [term]", value: "Define a term. Uses urban dictionary."},
                 {name: "\n🤖 Mod commands\n\n,del [number of messages]", value: "Deletes messages. Max 99."}
             )
             message.channel.send(embed);
