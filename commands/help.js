@@ -14,6 +14,7 @@ module.exports = {
                 {name: ",joke ?[category]", value: "Tells you a joke.\nCategories : (pun, programming, miscellaneous or dark)"},
                 {name: ",meme", value: "Replies with a meme"},
                 {name: ",game [rock or paper or scissors]", value: "Rock paper scissors"},
+                {name: ",cat", value: "Get a random cat photo"},
                 {name: "\n🔷 Other commands \n\n,ping", value:"Replies with ping to comma."},
                 {name: ",uptime", value: "Shows the uptime of comma"},
                 {name: ",user", value: "Gets info about you."},

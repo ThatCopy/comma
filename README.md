@@ -20,7 +20,9 @@ a relatively fun discord bot.
 
 `,user` - Gets info about you.
 
-`,define [term]` - Replies with a definition of a term. Uses urban dictionary
+`,define [term]` - Replies with a definition of a term. Uses owlbot
+
+`,cat` - Get a random cat photo
 
 `,del` - Deletes messages if you have permissions.
 
