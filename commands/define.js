@@ -14,14 +14,20 @@ module.exports = {
             }
           };
           function callback(error, response, body) {
+            try {
             let json = JSON.parse(body);
-            console.log(json)
             let embed = new Discord.MessageEmbed()
                 .setTitle(json.word)
                 .setThumbnail(json.definitions[0].image_url)
                 .setDescription(json.definitions[0].definition)
                 .setFooter("Powered by owlbot")
-            message.channel.send(embed)
+            message.channel.send(embed)} catch (error) {
+                if(error == "TypeError: Cannot read property '0' of undefined"){
+                    message.channel.send("No definition found")
+                }
+                else{
+                message.channel.send("Error : " + error);
+            }}
           }
         rq(options, callback);
         }}
