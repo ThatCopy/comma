@@ -1,6 +1,5 @@
 const rq = require('request');
 const Discord = require('discord.js');
-//const Owlbot = require('owlbot-js');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -17,7 +16,12 @@ module.exports = {
           function callback(error, response, body) {
             let json = JSON.parse(body);
             console.log(json)
-            message.channel.send(json.word + "OWO");
+            let embed = new Discord.MessageEmbed()
+                .setTitle(json.word)
+                .setThumbnail(json.definitions[0].image_url)
+                .setDescription(json.definitions[0].definition)
+                .setFooter("Powered by owlbot")
+            message.channel.send(embed)
           }
         rq(options, callback);
         }}
