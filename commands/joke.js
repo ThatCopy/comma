@@ -9,7 +9,7 @@ module.exports = {
 	async execute(message, args, client) {
         if(args.length){
             if(re.test(args[0])){
-                request.get("https://sv443.net/jokeapi/v2/joke/" + args[0], (error, response, body) => {
+                request.get("https://sv443.net/jokeapi/v2/joke/" + args[0] + "?blacklistFlags=nsfw", (error, response, body) => {
                     let json = JSON.parse(body);
                     if(json.type == "single"){
                         var embed = new Discord.MessageEmbed()
@@ -40,7 +40,7 @@ module.exports = {
             }
         }
         else{
-            request.get("https://sv443.net/jokeapi/v2/joke/Any", (error, response, body) => {
+            request.get("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw", (error, response, body) => {
                 let json = JSON.parse(body);
                 if(json.type == "single"){
                     var embed = new Discord.MessageEmbed()
