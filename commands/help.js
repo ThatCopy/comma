@@ -18,7 +18,6 @@ module.exports = {
                 {name: "\n🔷 Other commands \n\n,ping", value:"Replies with ping to comma."},
                 {name: ",uptime", value: "Shows the uptime of comma"},
                 {name: ",user", value: "Gets info about you."},
-                {name: ",define [term]", value: "Define a term. Uses urban dictionary."},
                 {name: "\n🤖 Mod commands\n\n,del [number of messages]", value: "Deletes messages. Max 99."}
             )
             message.channel.send(embed);
