@@ -1,35 +1,35 @@
-const Discord = require('discord.js');
-const dotenv = require('dotenv');
-const { prefix } = require('./config.json');
-const fs = require('fs');
+const Discord = require('discord.js')
+const dotenv = require('dotenv')
+const { prefix } = require('./config.json')
+const fs = require('fs')
 
-dotenv.config();
-const client = new Discord.Client();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-client.commands = new Discord.Collection();
+dotenv.config()
+const client = new Discord.Client()
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
+client.commands = new Discord.Collection()
 
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
+	const command = require(`./commands/${file}`)
+	client.commands.set(command.name, command)
 }   
 
 client.once('ready', () => {
-    console.log('Ready!');
-    client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`);
-});
-
+    console.log('Ready!')
+    client.user.setStatus('online') 
+    client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`, { type: "WATCHING"}) 
+}) 
 
 client.on('message', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    const args = message.content.slice(prefix.length).trim().split(' ');
-    const command = args.shift().toLowerCase();
-    if (!client.commands.has(command)) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return
+    const args = message.content.slice(prefix.length).trim().split(' ')
+    const command = args.shift().toLowerCase()
+    if (!client.commands.has(command)) return
     try {
-        client.commands.get(command).execute(message, args, client);
+        client.commands.get(command).execute(message, args, client)
     } catch (error) {
-        console.error(error);
-        message.reply('there was an error trying to execute that command!');
+        console.error(error)
+        message.reply('there was an error trying to execute that command!')
     }
-});
+})
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)
