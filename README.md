@@ -22,6 +22,14 @@ a relatively fun discord bot.
 
 `,cat` - Get a random cat photo
 
+`,when [something]` - Tells you when something will happen
+
+`,8ball` - Normal 8ball
+
+`,random [min] [max]` - Replies with a number between min and max.
+
+`,hello` - Hello! 👋
+
 `,del` - Deletes messages if you have permissions.
 
 

@@ -11,6 +11,10 @@ module.exports = {
             .addFields(
                 {name: "🎮 Fun / Games \n\n,coinflip", value: "Flips a coin."},
                 {name: ",dice", value: "Rolls a dice (D6)"},
+                {name: ",when [something]", value: "Tells you when something will happen"},
+                {name: ",8ball", value: "8ball"},
+                {name: ",random [min] [max]", value: "Replies with a number between min and max."},
+                {name: ",hello", value: "Hello! 👋"},
                 {name: ",joke ?[category]", value: "Tells you a joke.\nCategories : (pun, programming, miscellaneous or dark)"},
                 {name: ",meme", value: "Replies with a meme"},
                 {name: ",game [rock or paper or scissors]", value: "Rock paper scissors"},
