@@ -1,7 +1,7 @@
 # comma
 a relatively fun discord bot.
 
-### [Invite](https://discord.com/api/oauth2/authorize?client_id=749193946046922823&permissions=388166&scope=bot)
+### [Invite](https://discord.com/api/oauth2/authorize?client_id=749193946046922823&permissions=4648000&scope=bot)
 
 ## commands
 `,help` - Replies with a list of all commands
