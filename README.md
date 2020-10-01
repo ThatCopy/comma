@@ -24,6 +24,10 @@ a relatively fun discord bot.
 
 `,del` - Deletes messages if you have permissions.
 
+`,mute` Mute all people in the channel you are in.
+
+`,unmute` Unmute all people in the channel you are in.
+
 
 If you want to suggest a command, make an issue.
 

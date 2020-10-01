@@ -19,7 +19,8 @@ module.exports = {
                 {name: ",uptime", value: "Shows the uptime of comma"},
                 {name: ",user", value: "Gets info about you."},
                 {name: "\n🤖 Mod commands\n\n,del [number of messages]", value: "Deletes messages. Max 99."},
-                {name: ",mute", value: "Mute all people in the channel you are in."}
+                {name: ",mute", value: "Mute all people in the channel you are in."},
+                {name: ",unmute", value: "Unmute all people in the channel you are in."},
             )
             message.channel.send(embed);
     }}
