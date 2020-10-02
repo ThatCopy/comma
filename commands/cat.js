@@ -5,9 +5,9 @@ module.exports = {
 	name: 'cat',
 	description: 'Get a cat photo',
 	async execute(message, args, client) {
-        rq.get("https://thatcopy.pw/catapi/get/webp", (error, response, body) => {
+        rq.get("https://thatcopy.pw/catapi/rest", (error, response, body) => {
             let json = JSON.parse(body)
             let embed = new Discord.MessageEmbed()
-                .setImage(json.url)
+                .setImage(json.webpurl)
             message.channel.send(embed);
         })}}
