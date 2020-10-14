@@ -15,9 +15,7 @@ module.exports = {
         else{
             message.react('✅')
             message.channel.bulkDelete((parseInt(args[0]) + 1))
-            .then(
-                message.react('✅')
-            ).catch((err) => {
+            .catch((err) => {
                 message.react('❌')
                 message.channel.send("Error : " + err)
             })
