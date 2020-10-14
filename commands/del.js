@@ -13,7 +13,11 @@ module.exports = {
             message.channel.send("You can delete only 99 messages at a time.")
         }
         else{
-            message.react('✅')
-            setTimeout(function(){ message.channel.bulkDelete((parseInt(args[0]) + 1))}, 1000);
+            try {
+                message.react('✅')
+                setTimeout(function(){ message.channel.bulkDelete((parseInt(args[0]) + 1))}, 1000);                
+            } catch (error) {
+                message.channel.send(error);
+            }
         }
 }};
