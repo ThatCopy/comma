@@ -9,6 +9,7 @@ module.exports = {
 	description: "Picks a random num",
      execute(message, args, client) {
         if(isNaN(args[0]) || isNaN(args[1])){
+            message.react("🖕")
             message.channel.send("`typeof NaN;` -> 'number'")
         }
         else if(args[0] > 1000000000 || args[1] > 1000000000 || args[0] < -1000000000 || args[0] < -1000000000){
