@@ -11,7 +11,7 @@ module.exports = {
         if(isNaN(args[0]) || isNaN(args[1])){
             message.channel.send("`typeof NaN;` -> 'number'")
         }
-        if(args[0] > 1000000000 || args[1] > 1000000000 || args[0] < -1000000000 || args[0] < -1000000000){
+        else if(args[0] > 1000000000 || args[1] > 1000000000 || args[0] < -1000000000 || args[0] < -1000000000){
             message.channel.send("No buffer overflow, only stackoverflow.")
         }
         else if(args.length == 2){
