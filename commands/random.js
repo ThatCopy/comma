@@ -12,8 +12,9 @@ module.exports = {
             message.react("🖕")
             message.channel.send("`typeof NaN;` -> 'number'")
         }
-        else if(args[0] > 1000000000 || args[1] > 1000000000 || args[0] < -1000000000 || args[0] < -1000000000){
+        else if(args[0] > Number.MAX_SAFE_INTEGER || args[1] > Number.MAX_SAFE_INTEGER){
             message.channel.send("No buffer overflow, only stackoverflow.")
+            message.channel.send(getRandomNum(BigInt(args[0]), BigInt()))
         }
         else if(args.length == 2){
             message.channel.send(getRandomNum(args[0], args[1]))
