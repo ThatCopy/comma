@@ -14,7 +14,7 @@ module.exports = {
         }
         else if(args[0] > Number.MAX_SAFE_INTEGER || args[1] > Number.MAX_SAFE_INTEGER){
             message.channel.send("No buffer overflow, only stackoverflow.")
-            message.channel.send(getRandomNum(BigInt(args[0]), BigInt()))
+            message.channel.send(getRandomNum(BigInt(args[0]), BigInt(args[1])))
         }
         else if(args.length == 2){
             message.channel.send(getRandomNum(args[0], args[1]))
