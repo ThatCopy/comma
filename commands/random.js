@@ -4,6 +4,28 @@ function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min); 
 }
 
+function generateRandomBigInt(lowBigInt, highBigInt) {
+    if (lowBigInt >= highBigInt) {
+      throw new Error('lowBigInt must be smaller than highBigInt');
+    }
+  
+    const difference = highBigInt - lowBigInt;
+    const differenceLength = difference.toString().length;
+    let multiplier = '';
+    while (multiplier.length < differenceLength) {
+      multiplier += Math.random()
+        .toString()
+        .split('.')[1];
+    }
+    multiplier = multiplier.slice(0, differenceLength);
+    const divisor = '1' + '0'.repeat(differenceLength);
+  
+    const randomDifference = (difference * BigInt(multiplier)) / BigInt(divisor);
+  
+    return lowBigInt + randomDifference;
+  }
+  
+
 module.exports = {
 	name: 'random',
 	description: "Picks a random num",
@@ -14,7 +36,12 @@ module.exports = {
         }
         else if(args[0] > Number.MAX_SAFE_INTEGER || args[1] > Number.MAX_SAFE_INTEGER){
             message.channel.send("No buffer overflow, only stackoverflow.")
-            message.channel.send(getRandomNum(BigInt(args[0]), BigInt(args[1])))
+            if(args[0] > args[1]){
+                message.channel.send("Use : ,random [min] [max]")
+            }
+            else{
+                message.channel.send(generateRandomBigInt(BigInt(args[0]), BigInt(args[1])))
+            }
         }
         else if(args.length == 2){
             message.channel.send(getRandomNum(args[0], args[1]))
