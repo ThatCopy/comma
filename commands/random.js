@@ -31,17 +31,10 @@ module.exports = {
 	description: "Picks a random num",
      execute(message, args, client) {
         if(isNaN(args[0]) || isNaN(args[1])){
-            message.react("🖕")
             message.channel.send("`typeof NaN;` -> 'number'")
         }
         else if(args[0] > Number.MAX_SAFE_INTEGER || args[1] > Number.MAX_SAFE_INTEGER){
             message.channel.send("No buffer overflow, only stackoverflow.")
-            if(args[0] > args[1]){
-                message.channel.send("Use : ,random [min] [max]")
-            }
-            else{
-                message.channel.send(generateRandomBigInt(BigInt(args[0]), BigInt(args[1])))
-            }
         }
         else if(args.length == 2){
             message.channel.send(getRandomNum(args[0], args[1]))
