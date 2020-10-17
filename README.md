@@ -14,6 +14,8 @@ a relatively fun discord bot.
 
 `,meme` - Replies with a meme
 
+`,owo [text]` - Owofies some text! owo
+
 `,ping` - Replies with ping to comma.
 
 `,uptime` - Shows the uptime of comma.

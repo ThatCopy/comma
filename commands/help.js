@@ -17,6 +17,7 @@ module.exports = {
                 {name: ",hello", value: "Hello! 👋"},
                 {name: ",joke ?[category]", value: "Tells you a joke.\nCategories : (pun, programming, miscellaneous or dark)"},
                 {name: ",meme", value: "Replies with a meme"},
+                {name: ",owo [text]", value: "Owofies some text! owo"},
                 {name: ",game [rock or paper or scissors]", value: "Rock paper scissors"},
                 {name: ",cat", value: "Get a random cat photo"},
                 {name: "\n🔷 Other commands \n\n,ping", value:"Replies with ping to comma."},
