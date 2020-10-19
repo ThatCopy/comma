@@ -7,6 +7,7 @@ module.exports = {
 	name: 'joke',
 	description: 'tells you a joke',
 	async execute(message, args, client) {
+        try{
         if(args.length){
             if(re.test(args[0])){
                 let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + args[0] + "?blacklistFlags=nsfw")
@@ -24,9 +25,6 @@ module.exports = {
                         .setColor("#8a2de1")
                         .setFooter("Powered by JokeAPI - https://jokeapi.dev ")
                     message.channel.send(embed)
-                    }
-                    else{
-                        message.reply("📡 Couldn't connect to JokeAPI.");
                     }
                 }
             else{
@@ -59,5 +57,8 @@ module.exports = {
                     message.reply("📡 Couldn't connect to JokeAPI.");
                 }
             }
+        } catch(e) {
+            message.reply("📡 Couldn't connect to JokeAPI.");
         }
+    }
     }
