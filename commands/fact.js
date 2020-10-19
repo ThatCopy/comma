@@ -15,7 +15,7 @@ module.exports = {
             let safeText = text.replace(/`/g, "'")
 
             let embed = new Discord.MessageEmbed()
-                .setColor("FFFFFF")
+                .setColor("#3bffba")
                 .setDescription(safeText)
             message.channel.send(embed)
         })
