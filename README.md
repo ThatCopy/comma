@@ -30,6 +30,8 @@ a relatively fun discord bot.
 
 `,random [min] [max]` - Replies with a number between min and max.
 
+`,fact` - Tells you a random fact
+
 `,hello` - Hello! 👋
 
 `,del` - Deletes messages if you have permissions.
