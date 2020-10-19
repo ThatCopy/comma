@@ -13,13 +13,13 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command)
 }   
 
-client.once('ready', () => {
+client.on('ready', () => {
+    client.user.setStatus('online') 
+    client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`, { type: "WATCHING"}) 
     console.log('Ready!')
 }) 
 
 client.on('message', message => {
-    client.user.setStatus('online') 
-    client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`, { type: "WATCHING"}) 
     if (!message.content.startsWith(prefix) || message.author.bot) return
     const args = message.content.slice(prefix.length).trim().split(' ')
     const command = args.shift().toLowerCase()

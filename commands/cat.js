@@ -1,13 +1,14 @@
-const rq = require('request');
-const Discord = require('discord.js');
+const fetch = require('node-fetch')
+const Discord = require('discord.js')
 
 module.exports = {
 	name: 'cat',
 	description: 'Get a cat photo',
 	async execute(message, args, client) {
-        rq.get("https://www.thatcopy.pw/catapi/rest/", (error, response, body) => {
-            let json = JSON.parse(body)
-            let embed = new Discord.MessageEmbed()
-                .setImage(json.webpurl)
-            message.channel.send(embed);
-        })}}
+        let res = await fetch("https://www.thatcopy.pw/catapi/rest/")
+        let json = await res.json()
+        let embed = new Discord.MessageEmbed()
+            .setImage(json.webpurl)
+        message.channel.send(embed)
+    }
+}
