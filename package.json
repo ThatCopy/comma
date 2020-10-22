@@ -4,7 +4,7 @@
   "description": "a fun discord bot,",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "discord.js": "^12.3.1",
     "discordimate": "^1.4.6",
     "dotenv": "^8.2.0",
+    "jest-discordjs-mocks": "^1.0.2",
     "moment": "^2.27.0",
     "moment-duration-format": "^2.3.2",
     "node-fetch": "^2.6.1",
