@@ -1,18 +1,11 @@
+# I dont think this will work but I want to see so lets find out
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
   discord: antonioned/discord@0.1.0
-
-jobs: 
-  p-test: 
-    executor: node/default
-    steps: 
+workflows:
+  node-tests:
+    jobs:
       - node/test
       - discord/status: 
           webhook: "${DISCORD_STATUS_WEBHOOK}"
-
-workflows:
-  comma-test:
-    jobs:
-      - p-test
-# I dont think this will work but I want to see so lets find out
