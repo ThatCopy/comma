@@ -6,9 +6,9 @@ orbs:
 jobs: 
   test: 
     executor: node/default
-    - node/test
-    - discord/status: 
-        webhook: "${DISCORD_STATUS_WEBHOOK}"
+      - node/test
+      - discord/status: 
+          webhook: "${DISCORD_STATUS_WEBHOOK}"
   
 workflows:
   node-tests:
