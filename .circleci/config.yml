@@ -2,16 +2,11 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
   discord: antonioned/discord@0.1.0
-  
-jobs: 
-  test: 
-    executor: node/default
-      - node/test
-      - discord/status: 
-          webhook: "${DISCORD_STATUS_WEBHOOK}"
-  
+
 workflows:
   node-tests:
     jobs:
-      - test
+      - node/test
+      - discord/status: 
+          webhook: "${DISCORD_STATUS_WEBHOOK}"
 # I dont think this will work but I want to see so lets find out
