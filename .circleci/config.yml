@@ -1,0 +1,8 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+workflows:
+  node-tests:
+    jobs:
+      - node/test
+# I dont think this will work but I want to see so lets find out
