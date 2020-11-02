@@ -19,7 +19,7 @@ a relatively fun discord bot.
 
 `,parrot` - Sends a random party parrot
 
-` parrot-wave` - Parrot wave !(parrot)[https://cdn.discordapp.com/emojis/772747640051728404.gif?v=1]
+`,parrot-wave` - Parrot wave 
 
 `,random [min] [max]` - Replies with a number between min and max.
 
