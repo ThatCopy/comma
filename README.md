@@ -17,6 +17,10 @@ a relatively fun discord bot.
 
 `,8ball` - Classic 8ball
 
+`,parrot` - Sends a random party parrot
+
+` parrot-wave` - Parrot wave !(parrot)[https://cdn.discordapp.com/emojis/772747640051728404.gif?v=1]
+
 `,random [min] [max]` - Replies with a number between min and max.
 
 `,fact` - Tells you a random fact

@@ -13,6 +13,8 @@ module.exports = {
                 {name: ",dice", value: "Rolls a dice (D6)"},
                 {name: ",when [something]", value: "Tells you when something will happen"},
                 {name: ",8ball", value: "8ball"},
+                {name: ",parrot", value: "Sends a random party parrot"},
+                {name: ",parrot-wave", value: "Parrot wave <a:exceptionallyfastparrot:772747640051728404>"},
                 {name: ",random [min] [max]", value: "Replies with a number between min and max."},
                 {name: ",fact", value: "Tells you a random fact"},
                 {name: ",joke ?[category]", value: "Tells you a joke.\nCategories : (pun, programming, miscellaneous or dark)"},
