@@ -4,7 +4,7 @@ const fetch = require('node-fetch')
 let re = /\b(pun|programming|miscellaneous|dark)\b/i
 
 async function getJoke(urlParams = "Any") {
-    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams + "?blacklistFlags=nsfw")
+    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams.replace("") + "?blacklistFlags=nsfw")
     if(res.status != 200) {throw new Error("📡 Couldn't connect to JokeAPI.")}
     let json = await res.json()
     if(json.type == "single"){return json.joke}
@@ -30,7 +30,8 @@ module.exports = {
             if(args.length){ joke = await getJoke(args[0])}            
             else { joke = await getJoke() }
         } catch (error) {
-            
+            message.channel.send("📡 Couldn't connect to JokeAPI.")
+            return
         }
 
         let embed = new Discord.MessageEmbed()
