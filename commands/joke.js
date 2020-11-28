@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch')
 
-let re = /\b(pun|programming|miscellaneous|dark)\b/i
+let re = /^(pun|programming|miscellaneous|dark)/i
 
 async function getJoke(urlParams = "Any") {
     let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams.replace("") + "?blacklistFlags=nsfw")
