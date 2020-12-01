@@ -17,6 +17,10 @@ a relatively fun discord bot.
 
 `,8ball` - Classic 8ball
 
+`,leet [text]` - Leetify some text
+
+`,ismycomputeronfire` - Tells you if your computer is on fire
+
 `,parrot` - Sends a random party parrot
 
 `,parrot-wave` - Parrot wave 
