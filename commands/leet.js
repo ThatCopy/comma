@@ -16,7 +16,7 @@ module.exports = {
 	name: 'leet',
 	description: 'leetifies your message',
 	async execute(message, args, client) {
-        if(!args) {message.channel.send("Provide text to leetify"); return}
+        if(!args.length) {message.channel.send("Provide text to leetify"); return}
         message.channel.send(leetify(cleanUp(args.join(" "))))
     }
 }
