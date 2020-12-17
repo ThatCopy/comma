@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch')
 
-let re = /^(pun|programming|miscellaneous|dark)/i
+let re = /^(pun$|programming$|miscellaneous$|dark$)/i
 
 async function getJoke(urlParams = "Any") {
-    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams.replace("") + "?blacklistFlags=nsfw")
+    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams + "?blacklistFlags=nsfw")
     if(res.status != 200) {throw new Error("📡 Couldn't connect to JokeAPI.")}
-    let json = await res.json()
+    const json = await res.json()
+    console.log(json)
+    if(json.error === true) {throw new Error("📡 Couldn't connect to JokeAPI.")}
     if(json.type == "single"){return json.joke}
     else {return `**${json.setup}** \n\n ${json.delivery}`}
 }
@@ -30,10 +32,9 @@ module.exports = {
             if(args.length){ joke = await getJoke(args[0])}            
             else { joke = await getJoke() }
         } catch (error) {
-            message.channel.send("📡 Couldn't connect to JokeAPI.")
+            message.channel.send(error)
             return
         }
-
         let embed = new Discord.MessageEmbed()
             .setTitle(joke)
             .setColor("#8a2de1")
