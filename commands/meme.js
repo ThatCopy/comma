@@ -10,7 +10,7 @@ module.exports = {
         while(!safe){
             res = await fetch("https://meme-api.herokuapp.com/gimme")
             json = await res.json() 
-            if(json.nsfw || !json.spoiler) { return }
+            if(json.nsfw == true || json.spoiler == false) { return }
             safe = true
         }
         var embed = new Discord.MessageEmbed()
