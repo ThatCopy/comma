@@ -4,10 +4,9 @@ const fetch = require('node-fetch')
 let re = /^(pun$|programming$|miscellaneous$|dark$)/i
 
 async function getJoke(urlParams = "Any") {
-    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams + "?blacklistFlags=nsfw")
+    let res = await fetch("https://sv443.net/jokeapi/v2/joke/" + urlParams + "?safe-mode")
     if(res.status != 200) {throw new Error("📡 Couldn't connect to JokeAPI.")}
     const json = await res.json()
-    console.log(json)
     if(json.error === true) {throw new Error("📡 Couldn't connect to JokeAPI.")}
     if(json.type == "single"){return json.joke}
     else {return `**${json.setup}** \n\n ${json.delivery}`}

@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 client.on('ready', () => {
     client.user.setStatus('online') 
     client.user.setActivity(`,help | on ${client.guilds.cache.size} servers`, { type: "WATCHING"}) 
-    console.log('Ready!')
+    console.log(`comma is online, using prefix ${prefix}, on ${client.guilds.cache.size} servers, ${commandFiles.length} commands.`)
 }) 
 
 client.on('message', message => {
